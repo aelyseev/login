@@ -29,14 +29,15 @@ export function Form(): ReactElement {
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     actions.setSubmitting(true);
-    delay(500).then(() => {
-      actions.setSubmitting(false);
+    delay(1500).then(() => {
       if (state.validity) {
         actions.setError('Wrong credentials. Signing in failed');
       } else {
         actions.setAuthenticated(true);
         actions.reset();
       }
+    }).finally(() => {
+      actions.setSubmitting(false);
     });
   };
 
