@@ -17,6 +17,7 @@ export default defineConfig((configEnv) => {
     server: {
       port: Number(process.env.PORT) || 8080,
     },
+    base: './',
     css: {
       modules: {
         generateScopedName: isDevelopment
