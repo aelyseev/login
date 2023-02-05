@@ -1,0 +1,11 @@
+.mainHeader {
+  @apply text-4xl lg:text-6xl;
+  @apply leading-[1.15] font-bold text-blue-500;
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .mainHeader {
+    @apply text-transparent;
+    @apply bg-clip-text bg-gradient-to-br from-cyan-500 to-blue-500;
+  }
+}
