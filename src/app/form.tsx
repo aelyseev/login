@@ -96,7 +96,7 @@ export function Form(): ReactElement {
         <div className="flex flex-col md:flex-row md:items-center gap-y-3 gap-x-8 mt-8">
           <button
             onClick={clickHandler}
-            disabled={state.submitting || (state.login === '' && state.password === '')}
+            disabled={state.submitting || state.error !== '' || (state.login === '' && state.password === '')}
             className="text-2xl transition-opacity hover:opacity-90 disabled:opacity-50 disabled:text-gray-200 px-16 py-2 rounded-md bg-gradient-to-br from-cyan-500 to-blue-500 text-white"
             type="submit"
           >
