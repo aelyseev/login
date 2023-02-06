@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom';
 
 import { Field } from './field';
 import { useAppActions, useAppState } from './app-context';
+import { Button } from './button';
 
 const delay = (timeout: number) =>
   new Promise((resolve) => {
@@ -79,10 +80,10 @@ export function Form(): ReactElement {
   return (
     <FocusLock>
       <form onChange={changeListener} ref={formRef} onSubmit={submit}>
-        <div className="flex flex-col gap-y-6">
+        <div className="flex flex-col gap-y-4 lg:gap-y-6">
           {input}
           {password}
-          <label className="text-lg flex items-center gap-x-2">
+          <label className="ml-0.5 flex items-center gap-x-2">
             Wrong credentials
             <input
               checked={state.validity}
@@ -94,16 +95,15 @@ export function Form(): ReactElement {
           </label>
         </div>
         <div className="flex flex-col md:flex-row md:items-center gap-y-3 gap-x-8 mt-8">
-          <button
+          <Button
             onClick={clickHandler}
             disabled={state.submitting || state.error !== '' || (state.login === '' && state.password === '')}
-            className="text-2xl transition-opacity hover:opacity-90 disabled:opacity-50 disabled:text-gray-200 px-16 py-2 rounded-md bg-gradient-to-br from-cyan-500 to-blue-500 text-white"
             type="submit"
           >
             {state.submitting ? 'Signing in...' : 'Login'}
-          </button>
+          </Button>
           {(!valid || state.error) && submitted && (
-            <div className="text-center md:text-left text-orange-600">
+            <div className="text-center md:text-left text-rose-500">
               {state.error || 'Please, correct your inputs to continue'}
             </div>
           )}

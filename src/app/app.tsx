@@ -8,8 +8,8 @@ import { RequireAuth } from './require-auth';
 
 export const App = (): ReactElement => {
   return (
-    <main className="my-6 px-10 md:px-0 md:w-[600px] mx-auto">
-      <header>
+    <>
+      <header className="mt-4 px-10 lg:px-0 lg:w-[600px] lg:mx-auto">
         <Routes>
           <Route
             path="/login"
@@ -32,24 +32,26 @@ export const App = (): ReactElement => {
           />
         </Routes>
       </header>
-      <section>
-        <Routes>
-          <Route path="/login" element={<Form />} />
-          <Route
-            path="*"
-            element={
-              <RequireAuth>
-                <Home />
-              </RequireAuth>
-            }
-          />
-        </Routes>
-      </section>
-      <footer className="lg:absolute lg:mt-0 mt-16 left-4 bottom-4 text-gray-600 flex justify-center w-full">
+      <main className="px-10 lg:px-0 lg:w-[600px] lg:mx-auto">
+        <section>
+          <Routes>
+            <Route path="/login" element={<Form />} />
+            <Route
+              path="*"
+              element={
+                <RequireAuth>
+                  <Home />
+                </RequireAuth>
+              }
+            />
+          </Routes>
+        </section>
+      </main>
+      <footer className="pb-8 pt-16 text-gray-600 flex items-end justify-center w-full">
         <a target="_blank" rel="noreferrer noopener" className="underline" href="https://github.com/aelyseev/login">
           Source
         </a>
       </footer>
-    </main>
+    </>
   );
 };

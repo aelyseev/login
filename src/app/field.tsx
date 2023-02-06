@@ -35,16 +35,16 @@ export function Field({ type, onChange, hint, name, label, value, minLength, req
           onBlur={blurHandler}
           minLength={minLength}
           required={required}
-          className="border-gray-300 outline-blue-500 rounded focus:border-blue-500"
+          className="border-gray-300 outline-blue-500 rounded focus:border-blue-500 focus:shadow-lg focus:shadow-blue-100"
           type={type}
           onChange={change}
         />
         {!valid && touched ? (
-          <div role="alert" className="text-orange-600 text-base md:text-sm">
+          <div role="alert" className="text-rose-500 mt-0.5 ml-0.5 text-sm lg:text-base">
             {hint}
           </div>
         ) : (
-          <div aria-hidden className="text-base md:text-sm">
+          <div aria-hidden className="mt-0.5 text-sm lg:text-base">
             &nbsp;
           </div>
         )}

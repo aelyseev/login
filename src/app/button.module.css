@@ -1,0 +1,15 @@
+.button {
+  @apply text-lg font-bold;
+  @apply transition-colors;
+  @apply px-[5rem] py-3 rounded-xl;
+  @apply text-white;
+  @apply shadow-lg shadow-blue-400;
+  @apply hover:opacity-90;
+  @apply relative;
+  @apply active:top-0.5;
+}
+.button[type] {
+  @apply bg-blue-500;
+  @apply bg-gradient-to-r from-blue-600;
+  @apply disabled:pointer-events-none disabled:bg-blue-400 disabled:text-gray-200 disabled:bg-none;
+}
